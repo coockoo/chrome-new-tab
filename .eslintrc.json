@@ -1,14 +1,24 @@
 {
+  "root": true,
   "env": {
     "es6": true,
+    "browser": true,
     "node": true
   },
   "parserOptions": {
     "ecmaVersion": 2018,
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
-  "plugins": ["require-path-exists"],
-  "extends": ["eslint:recommended", "plugin:require-path-exists/recommended"],
+  "plugins": ["import", "react", "react-hooks"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:react/recommended"
+  ],
   "rules": {
     "brace-style": ["error", "1tbs"],
     "curly": ["error", "all"],
@@ -22,6 +32,19 @@
     "no-unused-vars": ["error", { "argsIgnorePattern": "_$" }],
     "object-curly-spacing": ["error", "always"],
     "quotes": ["error", "single", { "avoidEscape": true }],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+
+    "react/jsx-uses-react": ["error"],
+    "react/jsx-uses-vars": ["error"],
+    "react/prop-types": ["off"],
+
+    "react-hooks/rules-of-hooks": ["error"],
+    "react-hooks/exhaustive-deps": ["warn"]
+  },
+  "ignorePatterns": ["**/dist/*"],
+  "settings": {
+    "react": {
+      "version": "16.13.1"
+    }
   }
 }
