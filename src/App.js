@@ -2,7 +2,10 @@ import React from 'react';
 import { hot } from 'react-hot-loader/root';
 
 function App() {
-  const bookmarks = [{ title: 'Github', url: 'https://github.com' }];
+  const bookmarks = [
+    { title: 'Github', url: 'https://github.com' },
+    { title: 'Messenger', url: 'https://messenger.com' },
+  ];
   return (
     <div>
       {bookmarks.map((bookmark) => (
