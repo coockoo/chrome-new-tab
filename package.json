@@ -9,6 +9,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "rm -rf dist && webpack --config webpack.config.js",
+    "lint": "eslint . && stylelint \"**/*.less\"",
     "test": "jest"
   },
   "keywords": [
@@ -21,12 +22,30 @@
   "author": "Oleksandr Bondarchuk <alex.coockoo@gmail.com> (https://github.com/coockoo)",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@hot-loader/react-dom": "^17.0.0-rc.2",
+    "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^6.1.1",
+    "css-loader": "^4.3.0",
     "eslint": "^7.9.0",
-    "eslint-plugin-require-path-exists": "^1.1.9",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-react": "^7.21.0",
+    "eslint-plugin-react-hooks": "^4.1.2",
     "html-webpack-plugin": "^4.5.0",
+    "less": "^3.12.2",
+    "less-loader": "^7.0.1",
+    "mini-css-extract-plugin": "^0.11.2",
     "prettier": "^2.1.2",
+    "react-hot-loader": "^4.13.0",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.7.1",
+    "stylelint-config-standard": "^20.0.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
