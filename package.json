@@ -1,0 +1,22 @@
+{
+  "name": "chrome-new-tab",
+  "version": "1.0.0",
+  "description": "Chrome extension for a simple chrome new tab",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "new",
+    "tab",
+    "simple"
+  ],
+  "author": "Oleksandr Bondarchuk <alex.coockoo@gmail.com> (https://github.com/coockoo)",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "prettier": "^2.1.2"
+  }
+}
