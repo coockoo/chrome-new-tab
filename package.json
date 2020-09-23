@@ -2,8 +2,13 @@
   "name": "chrome-new-tab",
   "version": "1.0.0",
   "description": "Chrome extension for a simple chrome new tab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coockoo/chrome-new-tab.git"
+  },
   "main": "src/index.js",
   "scripts": {
+    "build": "rm -rf dist && webpack --config webpack.config.js",
     "test": "jest"
   },
   "keywords": [
@@ -16,7 +21,12 @@
   "author": "Oleksandr Bondarchuk <alex.coockoo@gmail.com> (https://github.com/coockoo)",
   "license": "UNLICENSED",
   "devDependencies": {
+    "copy-webpack-plugin": "^6.1.1",
     "eslint": "^7.9.0",
-    "prettier": "^2.1.2"
+    "eslint-plugin-require-path-exists": "^1.1.9",
+    "html-webpack-plugin": "^4.5.0",
+    "prettier": "^2.1.2",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   }
 }
