@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import chromeFns from '../../chrome-fns';
 
+import s from './styles.less';
+
 export default function Newtab() {
   const [bookmarks, setBookmarks] = useState([]);
 
@@ -20,12 +22,14 @@ export default function Newtab() {
   }, []);
 
   return (
-    <div>
-      {bookmarks.map((bookmark) => (
-        <div key={bookmark.url}>
-          <a href={bookmark.url}>{bookmark.title}</a>
-        </div>
-      ))}
+    <div className={s.newtab}>
+      <ul>
+        {bookmarks.map((bookmark) => (
+          <li key={bookmark.url}>
+            <a href={bookmark.url}>{bookmark.title}</a>
+          </li>
+        ))}
+      </ul>
       <a href={chromeFns.getOptionsUrl()} onClick={openOptions}>
         Options
       </a>
