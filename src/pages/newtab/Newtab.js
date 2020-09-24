@@ -1,16 +1,11 @@
 import React from 'react';
 
-const manifest = chrome.runtime.getManifest();
-const optionsURL = chrome.runtime.getURL(manifest.options_page);
+import chromeFns from '../../chrome-fns';
 
 export default function Newtab() {
   const openOptions = (e) => {
     e.preventDefault();
-    if (chrome.runtime.openOptionsPage) {
-      chrome.runtime.openOptionsPage();
-    } else {
-      chrome.tabs.create({ url: optionsURL });
-    }
+    chromeFns.openOptionsPage();
   };
   const bookmarks = [
     { title: 'Github', url: 'https://github.com' },
@@ -23,7 +18,7 @@ export default function Newtab() {
           <a href={bookmark.url}>{bookmark.title}</a>
         </div>
       ))}
-      <a href={optionsURL} onClick={openOptions}>
+      <a href={chromeFns.getOptionsUrl()} onClick={openOptions}>
         Options
       </a>
     </div>
