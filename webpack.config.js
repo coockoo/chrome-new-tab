@@ -9,17 +9,15 @@ const isDev = mode === 'development';
 
 module.exports = {
   mode,
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: {
+    newtab: path.resolve(__dirname, './src/pages/newtab/index.js'),
+    options: path.resolve(__dirname, './src/pages/options/index.js'),
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
-  resolve: {
-    alias: {
-      'react-dom': '@hot-loader/react-dom',
-    },
-  },
-  devtool: 'cheap-module-source-map',
+  devtool: 'hidden-cheap-module-source-map',
   module: {
     rules: [
       {
@@ -29,7 +27,6 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: ['react-hot-loader/babel'],
           },
         },
       },
@@ -55,8 +52,14 @@ module.exports = {
   },
   plugins: [
     new HTMLPlugin({
-      template: path.resolve(__dirname, './src/newtab.html'),
+      template: path.resolve(__dirname, './src/pages/newtab/index.html'),
       filename: 'newtab.html',
+      chunks: ['newtab'],
+    }),
+    new HTMLPlugin({
+      template: path.resolve(__dirname, './src/pages/options/index.html'),
+      filename: 'options.html',
+      chunks: ['options'],
     }),
     new CopyPlugin({
       patterns: [
