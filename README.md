@@ -2,7 +2,6 @@
 
 ## TODO
 
-- [ ] Setup hot reloading
 - [ ] Add README
 - [ ] Add screenshots
 - [ ] Add possibility to configure links

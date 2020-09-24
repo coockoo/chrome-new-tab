@@ -24,7 +24,6 @@
   "devDependencies": {
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
-    "@hot-loader/react-dom": "^17.0.0-rc.2",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^6.1.1",
     "css-loader": "^4.3.0",
@@ -37,7 +36,6 @@
     "less-loader": "^7.0.1",
     "mini-css-extract-plugin": "^0.11.2",
     "prettier": "^2.1.2",
-    "react-hot-loader": "^4.13.0",
     "style-loader": "^1.2.1",
     "stylelint": "^13.7.1",
     "stylelint-config-standard": "^20.0.0",
