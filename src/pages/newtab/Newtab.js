@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import chromeFns from '../../chrome-fns';
 
 export default function Newtab() {
+  const [bookmarks, setBookmarks] = useState([]);
+
   const openOptions = (e) => {
     e.preventDefault();
     chromeFns.openOptionsPage();
   };
-  const bookmarks = [
-    { title: 'Github', url: 'https://github.com' },
-    { title: 'Messenger', url: 'https://messenger.com' },
-  ];
+
+  useEffect(() => {
+    const doGetBookmarks = async () => {
+      const newBookmarks = await chromeFns.getStorage('bookmarks');
+      setBookmarks(newBookmarks || []);
+    };
+    doGetBookmarks();
+    return () => {};
+  }, []);
+
   return (
     <div>
       {bookmarks.map((bookmark) => (

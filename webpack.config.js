@@ -10,6 +10,8 @@ const isDev = mode === 'development';
 module.exports = {
   mode,
   entry: {
+    'core-js': 'core-js/stable',
+    'regenerator-runtime': 'regenerator-runtime/runtime',
     newtab: path.resolve(__dirname, './src/pages/newtab/index.js'),
     options: path.resolve(__dirname, './src/pages/options/index.js'),
   },
@@ -54,12 +56,12 @@ module.exports = {
     new HTMLPlugin({
       template: path.resolve(__dirname, './src/pages/newtab/index.html'),
       filename: 'newtab.html',
-      chunks: ['newtab'],
+      chunks: ['core-js', 'regenerator-runtime', 'newtab'],
     }),
     new HTMLPlugin({
       template: path.resolve(__dirname, './src/pages/options/index.html'),
       filename: 'options.html',
-      chunks: ['options'],
+      chunks: ['core-js', 'regenerator-runtime', 'options'],
     }),
     new CopyPlugin({
       patterns: [
