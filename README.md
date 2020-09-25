@@ -1,10 +1,5 @@
 # Chrome New Tab Extention
 
-## TODO
+Simple extension that shows selected websites.
 
-- [ ] Add README
-- [ ] Add screenshots
-- [ ] Add possibility to configure links
-- [ ] Finish
-- [ ] Publish to store
-- [ ] Add link here
+![Current look](./images/version-01.png)
