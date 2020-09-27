@@ -25,7 +25,7 @@ export default function Newtab() {
     <div className={s.newtab}>
       <ul>
         {bookmarks.map((bookmark) => (
-          <li key={bookmark.url}>
+          <li key={bookmark.url} className={s.bookmark}>
             <a href={bookmark.url}>{bookmark.title}</a>
           </li>
         ))}

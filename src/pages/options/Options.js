@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import chromeFns from '../../chrome-fns';
 
+import s from './styles.less';
+
 export default function Options() {
   const [bookmarks, setBookmarks] = useState([]);
   const [title, setTitle] = useState('');
@@ -47,23 +49,29 @@ export default function Options() {
   }, []);
 
   return (
-    <div>
-      {bookmarks.map((bookmark, index) => (
-        <div key={bookmark.url}>
-          {bookmark.title} - {bookmark.url}
-          <button type="button" onClick={(e) => deleteBookmark(bookmark, index, e)}>
-            Delete
+    <div className={s.options}>
+      <ul>
+        {bookmarks.map((bookmark, index) => (
+          <li key={bookmark.url} className={s.bookmark}>
+            <div>
+              <input type="text" value={bookmark.title} disabled />
+              <input type="text" value={bookmark.url} disabled />
+            </div>
+            <button type="button" onClick={(e) => deleteBookmark(bookmark, index, e)}>
+              Delete
+            </button>
+          </li>
+        ))}
+        <li className={s.bookmark}>
+          <div>
+            <input placeholder="title" type="text" value={title} onChange={onTitleChange} />
+            <input placeholder="url" type="text" value={url} onChange={onUrlChange} />
+          </div>
+          <button type="button" onClick={addBookmark}>
+            Add
           </button>
-        </div>
-      ))}
-      <label htmlFor="title">Title:</label>
-      <input id="title" type="text" value={title} onChange={onTitleChange} />
-      <label htmlFor="url">URL:</label>
-      <input id="url" type="text" value={url} onChange={onUrlChange} />
-
-      <button type="button" onClick={addBookmark}>
-        Add{' '}
-      </button>
+        </li>
+      </ul>
     </div>
   );
 }

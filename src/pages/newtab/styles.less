@@ -13,28 +13,24 @@
     color: #333;
   }
 
-  ul {
+  .bookmark {
     max-width: 480px;
     min-width: 240px;
-    list-style: none;
+    background-color: #fff;
+    margin: 8px 0;
+    padding: 4px 8px;
+    border-radius: 1px;
+    transition: background-color 0.1s ease-in;
+    box-shadow: #333 0 0 1px 1px;
 
-    li {
-      margin: 8px 0;
-      padding: 4px 8px;
-      border-radius: 1px;
-      box-shadow: #333 0 0 1px 1px;
-      background-color: #fff;
-      transition: background-color 0.1s ease-in;
+    a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
 
-      &:hover {
-        background-color: #eee;
-      }
-
-      a {
-        text-decoration: none;
-        color: #333;
-        display: block;
-      }
+    &:hover {
+      background-color: #f3f3f3;
     }
   }
 }
