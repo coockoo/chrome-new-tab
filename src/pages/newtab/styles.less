@@ -1,3 +1,7 @@
+@bg-color: #eeeff6;
+@base-text-color: #223f55;
+@secondary-text-color: #b5bccd;
+
 .newtab {
   flex: 1;
   display: flex;
@@ -5,32 +9,48 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  background-color: @bg-color;
+}
 
-  > a {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    color: #333;
+.optionsLink {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: @base-text-color;
+}
+
+.bookmarks {
+  width: 768px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 3px 1px @secondary-text-color;
+  overflow: hidden;
+}
+
+.bookmark {
+  // margin: 0 20px;
+  padding: 16px 20px;
+  border-bottom: 1px solid @bg-color;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.2s ease-in;
+
+  &:hover {
+    background-color: rgba(238, 239, 246, 0.5);
   }
 
-  .bookmark {
-    max-width: 480px;
-    min-width: 240px;
-    background-color: #fff;
-    margin: 8px 0;
-    padding: 4px 8px;
-    border-radius: 1px;
-    transition: background-color 0.1s ease-in;
-    box-shadow: #333 0 0 1px 1px;
-
-    a {
-      text-decoration: none;
-      color: #333;
-      display: block;
-    }
-
-    &:hover {
-      background-color: #f3f3f3;
-    }
+  &:last-child {
+    border-bottom: none;
   }
+}
+
+.title {
+  color: @base-text-color;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.url {
+  color: @secondary-text-color;
+  font-size: 16px;
 }

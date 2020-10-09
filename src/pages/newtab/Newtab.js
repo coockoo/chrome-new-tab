@@ -23,14 +23,17 @@ export default function Newtab() {
 
   return (
     <div className={s.newtab}>
-      <ul>
-        {bookmarks.map((bookmark) => (
-          <li key={bookmark.url} className={s.bookmark}>
-            <a href={bookmark.url}>{bookmark.title}</a>
+      <ul className={s.bookmarks}>
+        {bookmarks.map((bookmark, index) => (
+          <li key={index} className={s.bookmark}>
+            <a href={bookmark.url}>
+              <h1 className={s.title}>{bookmark.title}</h1>
+              <p className={s.url}>{bookmark.url}</p>
+            </a>
           </li>
         ))}
       </ul>
-      <a href={chromeFns.getOptionsUrl()} onClick={openOptions}>
+      <a className={s.optionsLink} href={chromeFns.getOptionsUrl()} onClick={openOptions}>
         Options
       </a>
     </div>
