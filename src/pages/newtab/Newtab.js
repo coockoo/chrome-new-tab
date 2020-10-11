@@ -26,9 +26,14 @@ export default function Newtab() {
       <ul className={s.bookmarks}>
         {bookmarks.map((bookmark, index) => (
           <li key={index} className={s.bookmark}>
-            <a href={bookmark.url}>
-              <h1 className={s.title}>{bookmark.title}</h1>
-              <p className={s.url}>{bookmark.url}</p>
+            <a className={s.bookmarkLink} href={bookmark.url}>
+              <div className={s.image}>
+                <img src={bookmark.image} alt="logo" title={bookmark.title} />
+              </div>
+              <div className={s.text}>
+                <h1 className={s.title}>{bookmark.title}</h1>
+                <p className={s.url}>{bookmark.url}</p>
+              </div>
             </a>
           </li>
         ))}
